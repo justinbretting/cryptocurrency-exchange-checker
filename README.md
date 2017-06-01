@@ -30,3 +30,5 @@ See Package.json for other scripts
 
 ## Start the server at http://localhost:3000
 `$ babel-node src/server/index.js`
+
+## TODO: Automated Testing!
