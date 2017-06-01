@@ -10,6 +10,7 @@ import actions from './redux/actions';
 import selectors from './redux/selectors';
 import App from './app.jsx';
 import _ from 'lodash';
+import 'whatwg-fetch'; // fetch polyfill
 
 var store = createStore(
   reducers,

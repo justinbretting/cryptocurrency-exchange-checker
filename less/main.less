@@ -1,1 +1,40 @@
 
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+  text-align: center;
+  margin: 1em;
+  font-size: 2em;
+
+  i {
+      animation: spin 1s linear infinite;
+  }
+}
+
+.exchanges {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.exchange-ticker {
+  display: inline-block;
+  margin-right: 1em;
+  width: 100px;
+  text-align: center;
+  height: 120px;
+
+  &.lowest {
+    border-color: green;
+    .panel-heading {
+      color: green;
+      font-weight: bold;
+    }
+
+    .fa-check {
+      color: green;
+      font-size: 2em;
+    }
+  }
+}

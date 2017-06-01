@@ -5,12 +5,14 @@ import reducers from './redux/reducers';
 import actions from './redux/actions';
 import _ from 'lodash';
 
+import CurrencyList from './currency-list.jsx';
+
 class App extends React.Component{
   render() {
     return <div className="container">
-      Main Page
+      <CurrencyList currencies={['ltc_btc','eth_btc','dsh_btc']} />
     </div>
   }
 }
 
-export default connect(state => state)(App);  
+export default connect(state => state)(App);
