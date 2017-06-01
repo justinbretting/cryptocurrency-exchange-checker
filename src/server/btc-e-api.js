@@ -24,7 +24,7 @@ export default {
           reject(error);
         }
 
-        resolve(JSON.parse(body));
+        resolve(JSON.parse(body)[pair]);
       })
     })
   }

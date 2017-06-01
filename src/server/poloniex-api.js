@@ -7,6 +7,14 @@ const agent = new https.Agent({
   port: '443'
 })
 
+function normalizeResponse(ticker) {
+  return {
+    high: parseFloat(ticker.high24hr),
+    low: parseFloat(ticker.low24hr),
+    last: parseFloat(ticker.last)
+  }
+}
+
 export default {
   async getExchangeRate(pair) {
     return new Promise((resolve, reject) => {
@@ -23,9 +31,9 @@ export default {
           reject(error);
         }
 
-        const pairs = JSON.parse(body);
+        const ticker = JSON.parse(body)[symbol];
 
-        resolve(pairs[symbol]);
+        resolve(normalizeResponse(ticker));
       })
     })
   }
