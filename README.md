@@ -1,7 +1,7 @@
 
 ## Cryptocurrency Exchange Checker
 
-This project pulls API data from poloniex.com and btc-e.com and displays the lowest last trade value for a given currency pair.
+This project pulls API data from poloniex.com and btc-e.com and displays the best conversion rate for a given currency pair.
 
 It also displays how many units of each currency you would receive for 20 bitcoin.
 
@@ -33,4 +33,4 @@ See Package.json for other scripts
 ## Start the server at http://localhost:3000
 `$ babel-node src/server/index.js`
 
-## TODO: Automated Testing!
+## TODO: Automated Testing
