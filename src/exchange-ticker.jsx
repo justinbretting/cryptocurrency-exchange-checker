@@ -14,6 +14,9 @@ export default class ExchangeTicker extends React.Component {
             <i className="fa fa-check" />
           </div>}
         </div>
+        <div className="panel-footer">
+          20<i className="fa fa-bitcoin" /> = {20*(1/data.last)}
+        </div>
       </div>
     )
   }
