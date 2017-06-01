@@ -19,15 +19,21 @@ apiRouter.get('/exchanges/:pair', async (req, res) => {
     return;
   }
 
-  let poloniex = await poloniexApi.getExchangeRate(pair);
-  let btce = await btceApi.getExchangeRate(pair);
+  try {
+    let poloniex = await poloniexApi.getExchangeRate(pair);
+    let btce = await btceApi.getExchangeRate(pair);
 
-  let response = { poloniex, btce }
-  let lowest = _.minBy(['poloniex','btce'], exchange => {
-    return response[exchange].last;
-  })
+    let response = { poloniex, btce }
+    let lowest = _.minBy(['poloniex','btce'], exchange => {
+      return response[exchange].last;
+    })
 
-  res.json(_.assign(response, { lowest }));
+    res.json(_.assign(response, { lowest }));
+  } catch (ex) {
+    let msg = "Error fetching exchange rates from data sources";
+    console.error(msg, ex)
+    res.status(500).json({ message: msg })
+  }
 })
 
 export default apiRouter;
