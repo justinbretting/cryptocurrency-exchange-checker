@@ -3,6 +3,8 @@
 
 This project pulls API data from poloniex.com and btc-e.com and displays the lowest last trade value for a given currency pair.
 
+It also displays how many units of each currency you would receive for 20 bitcoin.
+
 Built using Node, Express, React, and Redux
 
 ## Live Demo
