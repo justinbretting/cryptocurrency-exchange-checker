@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node src/server/index.js",
+    "heroku-postbuild": "npm run build && gulp bundle-prod",
     "start": "node ./dist/server/index.js",
     "build": "babel ./src -d dist --presets es2015,react"
   },
